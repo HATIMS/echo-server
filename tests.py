@@ -1,11 +1,11 @@
 from echo_client import client
+from echo_server import server
 import socket
 import unittest
-
+import warnings
 
 class EchoTestCase(unittest.TestCase):
     """tests for the echo server and client"""
-
     def send_message(self, message):
         """Attempt to send a message using the client
 
@@ -40,7 +40,6 @@ class EchoTestCase(unittest.TestCase):
             actual,
             "expected {0}, got {1}".format(expected, actual)
         )
-
 
 if __name__ == '__main__':
     unittest.main()
