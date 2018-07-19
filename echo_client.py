@@ -31,7 +31,7 @@ def client(msg, log_buffer=sys.stderr):
             chunk = sock.recv(16)            
             print('received "{0}"'.format(chunk.decode('utf8')), file=log_buffer)
             received_message += chunk.decode()
-            if len(received_message) < len(msg):
+            if len(received_message) == len(msg):
                 break
     
     except Exception as e:
